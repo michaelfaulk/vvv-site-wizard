@@ -376,7 +376,7 @@ if [[ $action = 'new' || $action = 'make' || $action = 'create' ]]; then
 	# =============================================================================
 	cd $path/config/nginx-config/sites
 	echo -en "Creating nginx-config/sites/$site.conf... "
-	sed -e "s|testserver\.com|$domain|" \
+	sed -e "s|testserver\.com|$domain ~^$site\\\.\\\d+\\\.\\\d+\\\.\\\d+\\\.\\\d+\\\.xip\\\.io$|" \
 		-e "s|wordpress-local|$site/htdocs|" local-nginx-example.conf-sample > $site.conf
 
 	if [[ $image_proxy = 'y' ]]; then
