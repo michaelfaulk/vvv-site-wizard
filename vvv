@@ -355,7 +355,6 @@ if [[ $action = 'new' || $action = 'make' || $action = 'create' ]]; then
 "\twp core download --allow-root $installversion\n"\
 "\twp core config --dbname=\"$db_name\" --dbuser=wp --dbpass=wp --dbhost=\"localhost\" --allow-root$wp_debug_text\n"\
 "\twp core install --url=$domain --title=\"$site - A WordPress Site\" --admin_user=admin --admin_password=password --admin_email=demo@example.com --allow-root\n"\
-"\twp plugin install dynamic-hostname --activate\n"\
 "\t\tcd -\n"\
 "else\n"\
 "\techo 'Updating WordPress in $site/htdocs...'\n"\
